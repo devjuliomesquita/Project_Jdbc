@@ -47,7 +47,7 @@ public class ActorService implements IActorService {
     }
 
     @Override
-    public void delete(ActorDTO actorDTO) {
-        repository.delete(actorDTO.getId());
+    public void delete(Long id) {
+        repository.delete(id);
     }
 }

@@ -10,5 +10,5 @@ public interface IActorService {
     ActorDTO findByName(String name);
     void create(ActorDTO actorDTO);
     void update(ActorDTO actorDTO);
-    void delete(ActorDTO actorDTO);
+    void delete(Long id);
 }
