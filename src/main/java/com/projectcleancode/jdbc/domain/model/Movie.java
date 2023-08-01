@@ -35,7 +35,7 @@ public class Movie {
         this.realiseDate = movieDTO.getRealiseDate();
         this.actors = movieDTO.getActors();
     }
-    public MovieDTO toDTO(MovieDTO movieDTO){
+    public MovieDTO toMovieDto(){
         return new MovieDTO(this.id, this.name, this.realiseDate, this.actors);
     }
 }

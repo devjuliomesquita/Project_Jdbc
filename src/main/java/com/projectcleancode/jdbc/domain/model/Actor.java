@@ -1,5 +1,7 @@
 package com.projectcleancode.jdbc.domain.model;
 
+import com.projectcleancode.jdbc.domain.dto.ActorDTO;
+
 public class Actor {
     private Long id;
     private String name;
@@ -13,5 +15,12 @@ public class Actor {
     }
     public String getName(){
         return name;
+    }
+    public Actor(ActorDTO actorDTO){
+        this.id = actorDTO.getId();
+        this.name = actorDTO.getName();
+    }
+    public ActorDTO toActorDto(){
+        return new ActorDTO(this.id, this.name);
     }
 }
