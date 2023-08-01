@@ -1,5 +1,7 @@
 package com.projectcleancode.jdbc.domain.model;
 
+import com.projectcleancode.jdbc.domain.dto.MovieDTO;
+
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -26,5 +28,14 @@ public class Movie {
     }
     public List<Actor> getActors(){
         return actors;
+    }
+    public Movie(MovieDTO movieDTO){
+        this.id = movieDTO.getId();
+        this.name = movieDTO.getName();
+        this.realiseDate = movieDTO.getRealiseDate();
+        this.actors = movieDTO.getActors();
+    }
+    public MovieDTO toDTO(MovieDTO movieDTO){
+        return new MovieDTO(this.id, this.name, this.realiseDate, this.actors);
     }
 }
