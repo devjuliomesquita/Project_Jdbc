@@ -6,6 +6,7 @@ import com.projectcleancode.jdbc.domain.interfaces.services.IActorService;
 import com.projectcleancode.jdbc.domain.model.Actor;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class ActorService implements IActorService {
@@ -24,13 +25,13 @@ public class ActorService implements IActorService {
 
     @Override
     public ActorDTO findById(Long id) {
-        Actor actor = repository.findById(id);
+        Actor actor = repository.findById(id).get();
         return actor.toActorDto();
     }
 
     @Override
     public ActorDTO findByName(String name) {
-        Actor actor = repository.findByName(name);
+        Actor actor = repository.findByName(name).get();
         return actor.toActorDto();
     }
 
