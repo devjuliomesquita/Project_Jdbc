@@ -7,7 +7,7 @@ import java.util.List;
 public interface IMovieService {
     List<MovieDTO> findAll();
     MovieDTO findById(Long id);
-    MovieDTO findByName(String name);
+    MovieDTO findByName(String title);
     void create(MovieDTO movieDTO);
     void update(MovieDTO movieDTO);
     void delete(Long id);

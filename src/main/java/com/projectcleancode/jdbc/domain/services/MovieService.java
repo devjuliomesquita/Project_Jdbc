@@ -24,13 +24,13 @@ public class MovieService implements IMovieService {
 
     @Override
     public MovieDTO findById(Long id) {
-        Movie movie = repository.findById(id);
+        Movie movie = repository.findById(id).get();
         return movie.toMovieDto();
     }
 
     @Override
-    public MovieDTO findByName(String name) {
-        Movie movie = repository.findByName(name);
+    public MovieDTO findByName(String title) {
+        Movie movie = repository.findByName(title).get();
         return movie.toMovieDto();
     }
 

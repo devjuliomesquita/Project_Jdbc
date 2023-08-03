@@ -62,7 +62,12 @@ public class ActorRepository  implements IActorRepository {
 
     @Override
     public void update(Actor actor) {
-
+        String sql = """
+                UPDATE actor
+                SET name = ?
+                WHERE id = ?;
+                """;
+        jdbcTemplate.update(sql, actor.getName(), actor.getId());
     }
 
     @Override

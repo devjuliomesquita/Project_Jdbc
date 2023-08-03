@@ -7,21 +7,21 @@ import java.util.List;
 
 public class Movie {
     private Long id;
-    private String name;
+    private String title;
     private LocalDateTime realiseDate;
     private List<Actor> actors;
     public Movie (){}
-    public Movie(Long id, String name, LocalDateTime realiseDate, List<Actor> actors){
+    public Movie(Long id, String title, LocalDateTime realiseDate, List<Actor> actors){
         this.id = id;
-        this.name = name;
+        this.title = title;
         this.realiseDate = realiseDate;
         this.actors = actors;
     }
     public Long getId(){
         return id;
     }
-    public String getName(){
-        return name;
+    public String getTitle(){
+        return title;
     }
     public LocalDateTime getRealiseDate(){
         return realiseDate;
@@ -31,11 +31,11 @@ public class Movie {
     }
     public Movie(MovieDTO movieDTO){
         this.id = movieDTO.getId();
-        this.name = movieDTO.getName();
+        this.title = movieDTO.getTitle();
         this.realiseDate = movieDTO.getRealiseDate();
         this.actors = movieDTO.getActors();
     }
     public MovieDTO toMovieDto(){
-        return new MovieDTO(this.id, this.name, this.realiseDate, this.actors);
+        return new MovieDTO(this.id, this.title, this.realiseDate, this.actors);
     }
 }

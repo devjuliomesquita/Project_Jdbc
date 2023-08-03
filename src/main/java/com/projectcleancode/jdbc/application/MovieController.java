@@ -23,9 +23,9 @@ public class MovieController {
     public ResponseEntity<MovieDTO> findById(@PathVariable("id") Long id){
         return new ResponseEntity<>(service.findById(id), HttpStatus.OK);
     }
-    @GetMapping("/findByName/{name}")
-    public ResponseEntity<MovieDTO> findByName(@PathVariable("name") String name){
-        return new ResponseEntity<>(service.findByName(name), HttpStatus.OK);
+    @GetMapping("/findByName/{title}")
+    public ResponseEntity<MovieDTO> findByTitle(@PathVariable("title") String title){
+        return new ResponseEntity<>(service.findByName(title), HttpStatus.OK);
     }
     @PostMapping
     public void crete(@RequestBody MovieDTO movieDTO){

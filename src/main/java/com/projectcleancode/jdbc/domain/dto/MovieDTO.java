@@ -7,20 +7,20 @@ import java.util.List;
 
 public class MovieDTO {
     private Long id;
-    private String name;
+    private String title;
     private LocalDateTime realiseDate;
     private List<Actor> actors;
-    public MovieDTO(Long id, String name, LocalDateTime realiseDate, List<Actor> actors){
+    public MovieDTO(Long id, String title, LocalDateTime realiseDate, List<Actor> actors){
         this.id = id;
-        this.name = name;
+        this.title = title;
         this.realiseDate = realiseDate;
         this.actors = actors;
     }
     public Long getId(){
         return id;
     }
-    public String getName(){
-        return name;
+    public String getTitle(){
+        return title;
     }
     public LocalDateTime getRealiseDate(){
         return realiseDate;
